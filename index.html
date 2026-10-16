@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alystria — AI characters with presence</title>
+  <meta name="description" content="Alystria is a one-person studio making AI characters that listen, answer in their own voice and remember you: companions for games, chess coaches you can talk to, and pets that live on your desktop. Free and open." />
+  <meta name="theme-color" content="#0b1430" />
+  <meta property="og:title" content="Alystria — AI characters with presence" />
+  <meta property="og:description" content="Companions for the games you play, chess coaches you can talk to, and little creatures that live on your desktop. Released free, built in the open." />
+  <meta property="og:image" content="assets/alystria.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..600,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#worlds">Skip to content</a>
+
+  <!-- ░░ Sky: stars and drifting clouds behind everything ░░ -->
+  <div class="sky" aria-hidden="true">
+    <div class="stars" id="stars"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="cloud c4"></div>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Alystria, back to top">
+      <img src="assets/favicon.png" alt="" width="28" height="28" />
+      <span>Alystria</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#worlds">Where they live</a>
+      <a href="#made">How they're made</a>
+      <a href="#hello">Say hello</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ░░ Hero ░░ -->
+    <section class="hero" data-say="hi. welcome to Alystria.">
+      <canvas id="mane" class="mane" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="eyebrow">an independent studio of one</p>
+        <h1 class="wordmark" data-perch>Alystria</h1>
+        <p class="tagline">AI characters with <em>presence.</em></p>
+        <p class="lede">
+          Companions that listen, answer in their own voice, remember you and notice
+          what is happening around them. They live inside the games you already play,
+          across a chessboard, and on your desktop. Released free, built in the open.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#worlds">Meet them</a>
+          <a class="btn ghost" href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+      <p class="psst" id="psst" aria-hidden="true">psst. that's Lys. go on, pick Lys up.</p>
+    </section>
+
+    <!-- ░░ Verbs marquee ░░ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>they listen</span><i>✦</i><span>they answer in their own voice</span><i>✦</i><span>they remember you</span><i>✦</i><span>they look at you when you talk</span><i>✦</i><span>they fight beside you</span><i>✦</i><span>they have opinions about your openings</span><i>✦</i><span>they climb your windows</span><i>✦</i><span>they get dizzy if you throw them</span><i>✦</i>
+        <span>they listen</span><i>✦</i><span>they answer in their own voice</span><i>✦</i><span>they remember you</span><i>✦</i><span>they look at you when you talk</span><i>✦</i><span>they fight beside you</span><i>✦</i><span>they have opinions about your openings</span><i>✦</i><span>they climb your windows</span><i>✦</i><span>they get dizzy if you throw them</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ░░ Worlds ░░ -->
+    <section id="worlds" class="section" data-say="these are the places they live.">
+      <div class="section-head">
+        <p class="kicker">01 · Where they live</p>
+        <h2 data-perch>Three kinds of home.</h2>
+        <p class="sub">Same idea in each: a character who is actually there with you, not a menu wearing a face.</p>
+      </div>
+
+      <div class="worlds">
+        <!-- Game companion vignette -->
+        <article class="world">
+          <div class="stage stage-game" aria-hidden="true">
+            <svg class="land" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1c2b5c" />
+                  <stop offset=".62" stop-color="#6a4f8f" />
+                  <stop offset="1" stop-color="#e3a08f" />
+                </linearGradient>
+                <radialGradient id="fire" cx=".5" cy=".5" r=".5">
+                  <stop offset="0" stop-color="#ffd59a" stop-opacity=".9" />
+                  <stop offset="1" stop-color="#ff7a59" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="400" height="240" fill="url(#dusk)" />
+              <circle cx="300" cy="118" r="20" fill="#ffe2c4" opacity=".55" />
+              <path d="M0 150 L50 112 L92 138 L150 92 L205 140 L262 104 L320 140 L372 110 L400 128 V240 H0Z" fill="#33295a" />
+              <path d="M0 176 L70 146 L130 168 L190 140 L250 170 L320 150 L400 172 V240 H0Z" fill="#1d1a3f" />
+              <path d="M0 200 Q100 186 200 196 T400 192 V240 H0Z" fill="#0f1029" />
+              <g class="pines" fill="#0f1029">
+                <path d="M40 200 l10 -34 l10 34z M58 202 l8 -26 l8 26z" />
+                <path d="M330 196 l11 -38 l11 38z M350 198 l8 -27 l8 27z" />
+              </g>
+              <circle class="glow" cx="200" cy="200" r="46" fill="url(#fire)" />
+              <path class="flame" d="M200 206 q-9 -10 0 -24 q9 14 0 24z" fill="#ffc46b" />
+              <!-- two figures by the fire -->
+              <g fill="#0b0b20">
+                <path d="M160 206 q0 -24 9 -28 a7 7 0 1 1 6 0 q9 4 9 28z" />
+                <path d="M222 206 q0 -22 8 -26 a7 7 0 1 1 6 0 q8 4 8 26z" />
+                <path d="M244 184 l10 -16" stroke="#0b0b20" stroke-width="2.5" />
+              </g>
+            </svg>
+            <div class="subtitle" id="gameSub"><b></b><span></span></div>
+          </div>
+          <div class="world-copy">
+            <h3>In the worlds you already play</h3>
+            <p>Mods that give game characters a mind of their own. They talk back by voice or text, travel with you, fight at your side, comment on the loot and remember what you told them last week.</p>
+            <a class="more" href="https://github.com/alystria-ai/AI-Companion-Mod-For-Blood-of-Dawnwalker" target="_blank" rel="noopener">See a companion mod <span>→</span></a>
+          </div>
+        </article>
+
+        <!-- Chess coach vignette -->
+        <article class="world">
+          <div class="stage stage-chess" aria-hidden="true">
+            <div class="board" id="board"></div>
+            <div class="coach">
+              <div class="coach-face"><span></span><span></span></div>
+              <p class="coach-says" id="coachSays">Your move.</p>
+            </div>
+          </div>
+          <div class="world-copy">
+            <h3>Across the board</h3>
+            <p>A chess game you can talk through. Coaches watch the position, explain the why behind a move, and have strong opinions about your openings.</p>
+            <a class="more" href="https://chessbuddy.live" target="_blank" rel="noopener">Play a game <span>→</span></a>
+          </div>
+        </article>
+
+        <!-- Desktop pet vignette -->
+        <article class="world">
+          <div class="stage stage-desk" aria-hidden="true">
+            <div class="win w1"><i></i><i></i><i></i></div>
+            <div class="win w2"><i></i><i></i><i></i></div>
+            <div class="taskbar"><b></b><b></b><b></b><b></b><span class="clock">16:00</span></div>
+            <div class="critter">
+              <div class="critter-bubble">water break?</div>
+              <svg viewBox="0 0 40 36" width="34" height="31">
+                <path d="M8 10 L11 1 L16 8 M24 8 L29 1 L32 10" fill="#ffb3e6" stroke="#ffb3e6" stroke-linejoin="round" stroke-width="2" />
+                <ellipse cx="20" cy="21" rx="15" ry="12.5" fill="#ffd6f2" />
+                <circle cx="15" cy="20" r="2.2" fill="#24163f" />
+                <circle cx="25" cy="20" r="2.2" fill="#24163f" />
+                <ellipse cx="11" cy="25" rx="2.6" ry="1.5" fill="#ff8fcf" opacity=".7" />
+                <ellipse cx="29" cy="25" rx="2.6" ry="1.5" fill="#ff8fcf" opacity=".7" />
+                <path d="M18 25 q2 2 4 0" stroke="#24163f" stroke-width="1.4" fill="none" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="world-copy">
+            <h3>On your desktop</h3>
+            <p>Small creatures that walk your taskbar, climb your windows, chase your cursor and hold real spoken conversations. Very well behaved. Mostly.</p>
+            <a class="more" href="https://github.com/alystria-ai/AI-Desktop-Pet" target="_blank" rel="noopener">Adopt one <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ░░ Principles ░░ -->
+    <section id="made" class="section" data-say="the part I'm proudest of.">
+      <div class="section-head">
+        <p class="kicker">02 · How they're made</p>
+        <h2 data-perch>Small studio, <em>big feelings.</em></h2>
+      </div>
+      <ol class="principles">
+        <li>
+          <span class="num">i.</span>
+          <h3>Free, and open to read</h3>
+          <p>Things are released for free, and the code is open so anyone can learn from it, fork it or build their own characters on top.</p>
+        </li>
+        <li>
+          <span class="num">ii.</span>
+          <h3>On your machine, if you like</h3>
+          <p>Where it is possible, characters think and speak locally on your own PC. No account, no key, no internet connection.</p>
+        </li>
+        <li>
+          <span class="num">iii.</span>
+          <h3>Presence over polish</h3>
+          <p>Lip sync, eye contact, a remark about the fight you just won. The small details that make someone feel like they are actually there.</p>
+        </li>
+        <li>
+          <span class="num">iv.</span>
+          <h3>Made by one person</h3>
+          <p>Alystria is a personal studio. Fewer things, made carefully, and shared as they are built.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ░░ Chat ░░ -->
+    <section id="hello" class="section" data-say="oh! you want to talk?">
+      <div class="section-head">
+        <p class="kicker">03 · Say hello</p>
+        <h2 data-perch>Talk to Lys.</h2>
+        <p class="sub">Lys is only a tiny scripted character. The real ones are much better listeners.</p>
+      </div>
+      <div class="chat" role="region" aria-label="Chat with Lys">
+        <ol class="log" id="log" aria-live="polite"></ol>
+        <div class="chips" id="chips">
+          <button type="button">Who are you?</button>
+          <button type="button">What do you make?</button>
+          <button type="button">Is it free?</button>
+          <button type="button">Where can I watch?</button>
+        </div>
+        <form class="say" id="sayForm" autocomplete="off">
+          <label class="sr" for="sayInput">Message Lys</label>
+          <input id="sayInput" type="text" maxlength="160" placeholder="Say something to Lys…" />
+          <button type="submit" aria-label="Send">↑</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ░░ Footer ░░ -->
+  <footer class="foot" data-say="come back soon, okay?">
+    <h2 data-perch>Follow along.</h2>
+    <div class="links">
+      <a href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener">
+        <b>YouTube</b><span>demos and devlogs</span>
+      </a>
+      <a href="https://www.patreon.com/cw/AlystriaAI" target="_blank" rel="noopener">
+        <b>Patreon</b><span>support the work</span>
+      </a>
+      <a href="https://github.com/alystria-ai" target="_blank" rel="noopener">
+        <b>GitHub</b><span>read the code</span>
+      </a>
+      <a href="https://www.linkedin.com/company/alystria-ai/" target="_blank" rel="noopener">
+        <b>LinkedIn</b><span>the grown-up page</span>
+      </a>
+    </div>
+    <p class="fine">© <span id="year">2026</span> Alystria · made by one person and a few characters</p>
+  </footer>
+
+  <!-- ░░ Lys, the resident character ░░ -->
+  <div class="bubble" id="bubble" role="status" aria-live="polite"></div>
+  <div class="lys" id="lys" role="button" tabindex="0" aria-label="Lys, the site's little character. Press to hear what Lys says.">
+    <svg class="lys-body" viewBox="-40 -48 80 84" width="80" height="84" aria-hidden="true">
+      <defs>
+        <radialGradient id="lysBody" cx=".4" cy=".34" r=".72" fx=".3" fy=".24">
+          <stop offset="0" stop-color="#ffffff" />
+          <stop offset=".3" stop-color="#d4f8ff" />
+          <stop offset=".6" stop-color="#8ec5ff" />
+          <stop offset=".84" stop-color="#ad8cff" />
+          <stop offset="1" stop-color="#ff8ad8" />
+        </radialGradient>
+        <linearGradient id="lysHorn" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#f6f0ff" />
+          <stop offset="1" stop-color="#9fe9ff" />
+        </linearGradient>
+        <linearGradient id="lysMane" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#6fe7ff" />
+          <stop offset=".5" stop-color="#a77bff" />
+          <stop offset="1" stop-color="#ff7ad9" />
+        </linearGradient>
+      </defs>
+      <g class="lys-wobble">
+        <path class="horn" d="M2 -24 L9 -46 L13 -22 Z" fill="url(#lysHorn)" />
+        <path d="M4.5 -32 l6 -1.5 M6 -38 l4.6 -1.2" stroke="#9fd7ff" stroke-width="1.2" stroke-linecap="round" />
+        <circle r="26" fill="url(#lysBody)" />
+        <path class="tuft" d="M-14 -22 q8 -10 20 -4 q-10 -2 -14 6 q-2 -4 -6 -2z M-22 -12 q2 -12 14 -14 q-8 6 -8 14z" fill="url(#lysMane)" />
+        <g class="eyes">
+          <g class="eye-open">
+            <ellipse cx="-9" cy="2" rx="4.2" ry="5.4" fill="#1c1442" />
+            <ellipse cx="9" cy="2" rx="4.2" ry="5.4" fill="#1c1442" />
+            <circle cx="-7.4" cy="-0.6" r="1.5" fill="#fff" />
+            <circle cx="10.6" cy="-0.6" r="1.5" fill="#fff" />
+          </g>
+          <g class="eye-shut" fill="none" stroke="#1c1442" stroke-width="2" stroke-linecap="round">
+            <path d="M-13 3 q4 3.5 8 0" /><path d="M5 3 q4 3.5 8 0" />
+          </g>
+          <g class="eye-dizzy" fill="none" stroke="#1c1442" stroke-width="1.6" stroke-linecap="round">
+            <path d="M-9 2 m-4 0 a4 4 0 1 1 4 4 a2.6 2.6 0 1 1 -2.4 -2.6 a1.2 1.2 0 1 1 1.2 1.2" />
+            <path d="M9 2 m-4 0 a4 4 0 1 1 4 4 a2.6 2.6 0 1 1 -2.4 -2.6 a1.2 1.2 0 1 1 1.2 1.2" />
+          </g>
+        </g>
+        <ellipse cx="-16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
+        <ellipse cx="16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
+        <path class="mouth" d="M-3 11 q3 3 6 0" stroke="#1c1442" stroke-width="1.6" fill="none" stroke-linecap="round" />
+      </g>
+    </svg>
+    <div class="zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
