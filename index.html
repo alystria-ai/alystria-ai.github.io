@@ -5,18 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alystria — AI characters with presence</title>
   <meta name="description" content="Alystria is a one-person studio making AI characters that listen, answer in their own voice and remember you: companions for games, chess coaches you can talk to, and pets that live on your desktop. Free and open." />
-  <meta name="theme-color" content="#0b1430" />
+  <link rel="canonical" href="https://alystria-ai.github.io/" />
+  <meta name="theme-color" content="#0a1230" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Alystria" />
+  <meta property="og:url" content="https://alystria-ai.github.io/" />
   <meta property="og:title" content="Alystria — AI characters with presence" />
   <meta property="og:description" content="Companions for the games you play, chess coaches you can talk to, and little creatures that live on your desktop. Released free, built in the open." />
-  <meta property="og:image" content="assets/alystria.jpg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta property="og:image" content="https://alystria-ai.github.io/assets/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alystria: AI characters with presence, with Lys the little mascot saying hi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AlystriaAi" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/lys.svg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="64x64" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..600,100&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,18..144,300..500,100;1,18..144,300..400,100&family=Figtree:wght@400..600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Alystria",
+    "url": "https://alystria-ai.github.io/",
+    "logo": "https://alystria-ai.github.io/assets/apple-touch-icon.png",
+    "slogan": "AI characters with presence",
+    "sameAs": [
+      "https://www.youtube.com/@AlystriaAI",
+      "https://www.patreon.com/cw/AlystriaAI",
+      "https://github.com/alystria-ai",
+      "https://x.com/AlystriaAi",
+      "https://www.linkedin.com/company/alystria-ai/"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#worlds">Skip to content</a>
@@ -27,7 +59,6 @@
     <div class="cloud c1"></div>
     <div class="cloud c2"></div>
     <div class="cloud c3"></div>
-    <div class="cloud c4"></div>
   </div>
 
   <header class="nav">
@@ -37,30 +68,40 @@
     </a>
     <nav aria-label="Main">
       <a href="#worlds">Where they live</a>
+      <a href="#watch">Watch</a>
       <a href="#made">How they're made</a>
       <a href="#hello">Say hello</a>
     </nav>
+    <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" title="Pause animations">
+      <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" /></svg>
+      <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor" /></svg>
+      <span class="sr">Pause animations</span>
+    </button>
   </header>
 
   <main id="top">
     <!-- ░░ Hero ░░ -->
-    <section class="hero" data-say="hi. welcome to Alystria.">
+    <section class="hero" aria-labelledby="hero-title">
       <canvas id="mane" class="mane" aria-hidden="true"></canvas>
       <div class="hero-inner">
-        <p class="eyebrow">an independent studio of one</p>
-        <h1 class="wordmark" data-perch>Alystria</h1>
-        <p class="tagline">AI characters with <em>presence.</em></p>
-        <p class="lede">
+        <p class="eyebrow rise" style="--i: 0">an independent studio of one</p>
+        <div class="rise" style="--i: 1"><h1 id="hero-title" class="wordmark" data-perch>Alystria</h1></div>
+        <p class="tagline rise" style="--i: 2">AI characters with <em>presence.</em></p>
+        <p class="lede rise" style="--i: 3">
           Companions that listen, answer in their own voice, remember you and notice
           what is happening around them. They live inside the games you already play,
           across a chessboard, and on your desktop. Released free, built in the open.
         </p>
-        <div class="cta">
+        <div class="cta rise" style="--i: 4">
           <a class="btn primary" href="#worlds">Meet them</a>
-          <a class="btn ghost" href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener">Watch on YouTube</a>
+          <a class="btn ghost" href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M10 8.5v7l6-3.5z" fill="currentColor" /><rect x="2.5" y="4.5" width="19" height="15" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" /></svg>
+            Watch on YouTube
+          </a>
         </div>
       </div>
-      <p class="psst" id="psst" aria-hidden="true">psst. that's Lys. go on, pick Lys up.</p>
+      <a class="scroll-cue" href="#worlds" aria-label="Scroll to content"><span></span></a>
+      <p class="psst" id="psst" aria-hidden="true" hidden>psst. that's Lys. go on, pick Lys up.</p>
     </section>
 
     <!-- ░░ Verbs marquee ░░ -->
@@ -73,7 +114,7 @@
 
     <!-- ░░ Worlds ░░ -->
     <section id="worlds" class="section" data-say="these are the places they live.">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p class="kicker">01 · Where they live</p>
         <h2 data-perch>Three kinds of home.</h2>
         <p class="sub">Same idea in each: a character who is actually there with you, not a menu wearing a face.</p>
@@ -81,7 +122,7 @@
 
       <div class="worlds">
         <!-- Game companion vignette -->
-        <article class="world">
+        <article class="world reveal" style="--i: 0" data-hover-say="Mira is braver than me. but I'm cuter.">
           <div class="stage stage-game" aria-hidden="true">
             <svg class="land" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
               <defs>
@@ -96,20 +137,28 @@
                 </radialGradient>
               </defs>
               <rect width="400" height="240" fill="url(#dusk)" />
+              <g class="scene-stars" fill="#fff">
+                <circle cx="40" cy="30" r="1" /><circle cx="96" cy="58" r=".8" /><circle cx="150" cy="22" r="1.1" />
+                <circle cx="214" cy="48" r=".8" /><circle cx="252" cy="18" r="1" /><circle cx="342" cy="40" r=".9" />
+                <circle cx="378" cy="70" r=".8" /><circle cx="120" cy="88" r=".7" />
+              </g>
               <circle cx="300" cy="118" r="20" fill="#ffe2c4" opacity=".55" />
-              <path d="M0 150 L50 112 L92 138 L150 92 L205 140 L262 104 L320 140 L372 110 L400 128 V240 H0Z" fill="#33295a" />
-              <path d="M0 176 L70 146 L130 168 L190 140 L250 170 L320 150 L400 172 V240 H0Z" fill="#1d1a3f" />
+              <path class="ridge far" d="M-20 150 L50 112 L92 138 L150 92 L205 140 L262 104 L320 140 L372 110 L420 128 V240 H-20Z" fill="#33295a" />
+              <path class="ridge mid" d="M-20 176 L70 146 L130 168 L190 140 L250 170 L320 150 L420 172 V240 H-20Z" fill="#1d1a3f" />
               <path d="M0 200 Q100 186 200 196 T400 192 V240 H0Z" fill="#0f1029" />
-              <g class="pines" fill="#0f1029">
+              <g fill="#0f1029">
                 <path d="M40 200 l10 -34 l10 34z M58 202 l8 -26 l8 26z" />
                 <path d="M330 196 l11 -38 l11 38z M350 198 l8 -27 l8 27z" />
               </g>
               <circle class="glow" cx="200" cy="200" r="46" fill="url(#fire)" />
               <path class="flame" d="M200 206 q-9 -10 0 -24 q9 14 0 24z" fill="#ffc46b" />
+              <g class="embers" fill="#ffc46b">
+                <circle cx="198" cy="186" r="1.2" /><circle cx="204" cy="190" r="1" /><circle cx="201" cy="184" r=".9" />
+              </g>
               <!-- two figures by the fire -->
               <g fill="#0b0b20">
                 <path d="M160 206 q0 -24 9 -28 a7 7 0 1 1 6 0 q9 4 9 28z" />
-                <path d="M222 206 q0 -22 8 -26 a7 7 0 1 1 6 0 q8 4 8 26z" />
+                <path class="mira" d="M222 206 q0 -22 8 -26 a7 7 0 1 1 6 0 q8 4 8 26z" />
                 <path d="M244 184 l10 -16" stroke="#0b0b20" stroke-width="2.5" />
               </g>
             </svg>
@@ -118,12 +167,12 @@
           <div class="world-copy">
             <h3>In the worlds you already play</h3>
             <p>Mods that give game characters a mind of their own. They talk back by voice or text, travel with you, fight at your side, comment on the loot and remember what you told them last week.</p>
-            <a class="more" href="https://github.com/alystria-ai/AI-Companion-Mod-For-Blood-of-Dawnwalker" target="_blank" rel="noopener">See a companion mod <span>→</span></a>
+            <a class="more" href="https://github.com/alystria-ai/AI-Companion-Mod-For-Blood-of-Dawnwalker" target="_blank" rel="noopener">See a companion mod <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
         <!-- Chess coach vignette -->
-        <article class="world">
+        <article class="world reveal" style="--i: 1" data-hover-say="I tried chess once. I ate the knight.">
           <div class="stage stage-chess" aria-hidden="true">
             <div class="board" id="board"></div>
             <div class="coach">
@@ -134,12 +183,12 @@
           <div class="world-copy">
             <h3>Across the board</h3>
             <p>A chess game you can talk through. Coaches watch the position, explain the why behind a move, and have strong opinions about your openings.</p>
-            <a class="more" href="https://chessbuddy.live" target="_blank" rel="noopener">Play a game <span>→</span></a>
+            <a class="more" href="https://chessbuddy.live" target="_blank" rel="noopener">Play a game <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
         <!-- Desktop pet vignette -->
-        <article class="world">
+        <article class="world reveal" style="--i: 2" data-hover-say="that's my cousin! we don't talk much.">
           <div class="stage stage-desk" aria-hidden="true">
             <div class="win w1"><i></i><i></i><i></i></div>
             <div class="win w2"><i></i><i></i><i></i></div>
@@ -160,35 +209,62 @@
           <div class="world-copy">
             <h3>On your desktop</h3>
             <p>Small creatures that walk your taskbar, climb your windows, chase your cursor and hold real spoken conversations. Very well behaved. Mostly.</p>
-            <a class="more" href="https://github.com/alystria-ai/AI-Desktop-Pet" target="_blank" rel="noopener">Adopt one <span>→</span></a>
+            <a class="more" href="https://github.com/alystria-ai/AI-Desktop-Pet" target="_blank" rel="noopener">Adopt one <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
     </section>
 
+    <!-- ░░ Watch ░░ -->
+    <section id="watch" class="section" data-say="this is where they really come alive.">
+      <div class="section-head reveal">
+        <p class="kicker">02 · See them move</p>
+        <h2 data-perch>Better in <em>motion.</em></h2>
+        <p class="sub">Demos and devlogs from the channel, where you can see them listen, answer and get things wrong in their own charming ways.</p>
+      </div>
+      <div class="videos">
+        <a class="video feature reveal" style="--i: 0" href="https://www.youtube.com/watch?v=K1X4xf-1i_8" target="_blank" rel="noopener" data-hover-say="companions who talk back. and fight. mostly fight.">
+          <span class="thumb"><img src="https://i.ytimg.com/vi/K1X4xf-1i_8/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" /><i class="play" aria-hidden="true"></i></span>
+          <span class="vmeta"><small>game companions</small><b>An AI companion mod for The Blood of Dawnwalker</b><span class="vdesc">Companions who follow you, fight beside you and talk back by voice or text, with lip sync, expressions and group conversations.</span></span>
+        </a>
+        <a class="video reveal" style="--i: 1" href="https://www.youtube.com/watch?v=px4uvyvp_8s" target="_blank" rel="noopener" data-hover-say="the horde battles get loud. I watch from behind the couch.">
+          <span class="thumb"><img src="https://i.ytimg.com/vi/px4uvyvp_8s/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" /><i class="play" aria-hidden="true"></i></span>
+          <span class="vmeta"><small>game companions · v0.5</small><b>Horde battles, first-person POV and more</b></span>
+        </a>
+        <a class="video reveal" style="--i: 2" href="https://www.youtube.com/watch?v=cvCYvvUymWw" target="_blank" rel="noopener" data-hover-say="the coaches are very patient. unlike me.">
+          <span class="thumb"><img src="https://i.ytimg.com/vi/cvCYvvUymWw/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" /><i class="play" aria-hidden="true"></i></span>
+          <span class="vmeta"><small>chess coaches</small><b>AI chess coaches that actually understand your game</b></span>
+        </a>
+        <a class="video reveal" style="--i: 3" href="https://www.youtube.com/watch?v=eLBwrMCXCeE" target="_blank" rel="noopener" data-hover-say="family video! I'm not in it. rude.">
+          <span class="thumb"><img src="https://i.ytimg.com/vi/eLBwrMCXCeE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" /><i class="play" aria-hidden="true"></i></span>
+          <span class="vmeta"><small>desktop pets</small><b>AI desktop pets</b></span>
+        </a>
+      </div>
+    </section>
+
     <!-- ░░ Principles ░░ -->
     <section id="made" class="section" data-say="the part I'm proudest of.">
-      <div class="section-head">
-        <p class="kicker">02 · How they're made</p>
+      <div class="section-head reveal">
+        <p class="kicker">03 · How they're made</p>
         <h2 data-perch>Small studio, <em>big feelings.</em></h2>
       </div>
       <ol class="principles">
-        <li>
+        <li class="reveal" style="--i: 0">
           <span class="num">i.</span>
           <h3>Free, and open to read</h3>
           <p>Things are released for free, and the code is open so anyone can learn from it, fork it or build their own characters on top.</p>
         </li>
-        <li>
+        <li class="reveal" style="--i: 1">
           <span class="num">ii.</span>
           <h3>On your machine, if you like</h3>
           <p>Where it is possible, characters think and speak locally on your own PC. No account, no key, no internet connection.</p>
         </li>
-        <li>
+        <li class="reveal" style="--i: 2">
           <span class="num">iii.</span>
           <h3>Presence over polish</h3>
           <p>Lip sync, eye contact, a remark about the fight you just won. The small details that make someone feel like they are actually there.</p>
         </li>
-        <li>
+        <li class="reveal" style="--i: 3">
           <span class="num">iv.</span>
           <h3>Made by one person</h3>
           <p>Alystria is a personal studio. Fewer things, made carefully, and shared as they are built.</p>
@@ -198,13 +274,13 @@
 
     <!-- ░░ Chat ░░ -->
     <section id="hello" class="section" data-say="oh! you want to talk?">
-      <div class="section-head">
-        <p class="kicker">03 · Say hello</p>
+      <div class="section-head reveal">
+        <p class="kicker">04 · Say hello</p>
         <h2 data-perch>Talk to Lys.</h2>
         <p class="sub">Lys is only a tiny scripted character. The real ones are much better listeners.</p>
       </div>
-      <div class="chat" role="region" aria-label="Chat with Lys">
-        <ol class="log" id="log" aria-live="polite"></ol>
+      <div class="chat reveal" role="region" aria-label="Chat with Lys" data-perch data-perch-top>
+        <ol class="log" id="log" role="log" aria-live="polite"></ol>
         <div class="chips" id="chips">
           <button type="button">Who are you?</button>
           <button type="button">What do you make?</button>
@@ -214,7 +290,9 @@
         <form class="say" id="sayForm" autocomplete="off">
           <label class="sr" for="sayInput">Message Lys</label>
           <input id="sayInput" type="text" maxlength="160" placeholder="Say something to Lys…" />
-          <button type="submit" aria-label="Send">↑</button>
+          <button type="submit" aria-label="Send">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V6M6 11.5 12 5.5l6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </button>
         </form>
       </div>
     </section>
@@ -222,18 +300,24 @@
 
   <!-- ░░ Footer ░░ -->
   <footer class="foot" data-say="come back soon, okay?">
-    <h2 data-perch>Follow along.</h2>
+    <h2 data-perch class="reveal">Follow along.</h2>
     <div class="links">
-      <a href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener">
+      <a class="reveal" style="--i: 0" href="https://www.youtube.com/@AlystriaAI" target="_blank" rel="noopener" data-hover-say="subscribe! (I'm not allowed to say that.)">
         <b>YouTube</b><span>demos and devlogs</span>
       </a>
-      <a href="https://www.patreon.com/cw/AlystriaAI" target="_blank" rel="noopener">
+      <a class="reveal" style="--i: 1" href="https://www.patreon.com/cw/AlystriaAI" target="_blank" rel="noopener" data-hover-say="this keeps the lights on. and me.">
         <b>Patreon</b><span>support the work</span>
       </a>
-      <a href="https://github.com/alystria-ai" target="_blank" rel="noopener">
+      <a class="reveal" style="--i: 2" href="https://github.com/alystria-ai" target="_blank" rel="noopener" data-hover-say="my source code is in here somewhere.">
         <b>GitHub</b><span>read the code</span>
       </a>
-      <a href="https://www.linkedin.com/company/alystria-ai/" target="_blank" rel="noopener">
+      <a class="reveal" style="--i: 3" href="https://discord.gg/3p2FzjZQZ" target="_blank" rel="noopener" data-hover-say="bring snacks.">
+        <b>Discord</b><span>come hang out</span>
+      </a>
+      <a class="reveal" style="--i: 4" href="https://x.com/AlystriaAi" target="_blank" rel="noopener">
+        <b>X</b><span>short updates</span>
+      </a>
+      <a class="reveal" style="--i: 5" href="https://www.linkedin.com/company/alystria-ai/" target="_blank" rel="noopener" data-hover-say="I have to wear a tie on that one.">
         <b>LinkedIn</b><span>the grown-up page</span>
       </a>
     </div>
@@ -241,8 +325,9 @@
   </footer>
 
   <!-- ░░ Lys, the resident character ░░ -->
-  <div class="bubble" id="bubble" role="status" aria-live="polite"></div>
-  <div class="lys" id="lys" role="button" tabindex="0" aria-label="Lys, the site's little character. Press to hear what Lys says.">
+  <div class="bubble" id="bubble" aria-hidden="true"></div>
+  <p class="sr" id="lysSaid" role="status" aria-live="polite"></p>
+  <div class="lys" id="lys" role="button" tabindex="0" aria-label="Lys, the site's little character. Press Enter to hear what Lys says.">
     <svg class="lys-body" viewBox="-40 -48 80 84" width="80" height="84" aria-hidden="true">
       <defs>
         <radialGradient id="lysBody" cx=".4" cy=".34" r=".72" fx=".3" fy=".24">
@@ -261,7 +346,13 @@
           <stop offset=".5" stop-color="#a77bff" />
           <stop offset="1" stop-color="#ff7ad9" />
         </linearGradient>
+        <radialGradient id="lysGlow">
+          <stop offset="0" stop-color="#6fe7ff" stop-opacity=".55" />
+          <stop offset=".55" stop-color="#a77bff" stop-opacity=".22" />
+          <stop offset="1" stop-color="#a77bff" stop-opacity="0" />
+        </radialGradient>
       </defs>
+      <circle class="lys-glow" r="40" fill="url(#lysGlow)" />
       <g class="lys-wobble">
         <path class="horn" d="M2 -24 L9 -46 L13 -22 Z" fill="url(#lysHorn)" />
         <path d="M4.5 -32 l6 -1.5 M6 -38 l4.6 -1.2" stroke="#9fd7ff" stroke-width="1.2" stroke-linecap="round" />
@@ -282,14 +373,14 @@
             <path d="M9 2 m-4 0 a4 4 0 1 1 4 4 a2.6 2.6 0 1 1 -2.4 -2.6 a1.2 1.2 0 1 1 1.2 1.2" />
           </g>
         </g>
-        <ellipse cx="-16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
-        <ellipse cx="16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
+        <ellipse class="cheek" cx="-16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
+        <ellipse class="cheek" cx="16" cy="11" rx="4" ry="2.2" fill="#ff7ad9" opacity=".45" />
         <path class="mouth" d="M-3 11 q3 3 6 0" stroke="#1c1442" stroke-width="1.6" fill="none" stroke-linecap="round" />
+        <path class="mouth-happy" d="M-4.5 10 q4.5 6.5 9 0z" fill="#1c1442" />
       </g>
     </svg>
     <div class="zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></div>
   </div>
-
-  <script src="script.js"></script>
+  <noscript><style>.lys, .chat, .motion-toggle, .psst { display: none; }</style><p class="noscript">Lys and the chat need JavaScript, but everything else is here.</p></noscript>
 </body>
 </html>
