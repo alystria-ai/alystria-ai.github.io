@@ -20,7 +20,7 @@
     youtube: "https://www.youtube.com/@AlystriaAI",
     patreon: "https://www.patreon.com/cw/AlystriaAI",
     github: "https://github.com/alystria-ai",
-    discord: "https://discord.gg/3p2FzjZQZ",
+    discord: "https://discord.gg/p4pxQhAvJ",
     chess: "https://chessbuddy.live",
   };
 
